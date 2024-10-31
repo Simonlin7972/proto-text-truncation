@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+}
+
+.editable-text {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+    cursor: text;
+    min-height: 50px;
+}
+
+.editable-text:focus {
+    border-color: purple;
+}
+
+.editable-text:hover {
+    border-color: purple;
+}
+
+.resizer {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: purple;
+    border-radius: 50%;
+    cursor: nwse-resize;
+}
+
+.top-left { top: -5px; left: -5px; }
+.top-right { top: -5px; right: -5px; }
+.bottom-left { bottom: -5px; left: -5px; }
+.bottom-right { bottom: -5px; right: -5px; }
+
+.draggable-button {
+    position: absolute;
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    background: purple;
+    border-radius: 50%;
+    cursor: move;
+    display: none; /* Initially hidden */
+    top: 100%; /* Position it below the editable text */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Center adjustment */
+}
